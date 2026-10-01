@@ -3,10 +3,10 @@ export const site = {
   tagline: "Learn what actually matters.",
   description:
     "FSA College System Shabqadar is an intermediate and IT college focused on practical skills, rigorous academics, and real-world preparation for 11th and 12th graders.",
-  phone: "(888) 456 7890",
-  phoneHref: "tel:8884567890",
-  email: "admissions@fsa-college.edu",
-  emailHref: "mailto:admissions@fsa-college.edu",
+  phone: "0333-5011415",
+  phoneHref: "tel:+923335011415",
+  email: "Fsacollegesystemshabqadar@gmail.com",
+  emailHref: "mailto:Fsacollegesystemshabqadar@gmail.com",
   address: "Shabqadar, Khyber Pakhtunkhwa, Pakistan",
   hours: "Monday – Saturday, 8:00 am – 2:30 pm",
 } as const;
@@ -27,6 +27,46 @@ export const stats = [
   { value: 100, suffix: "%", label: "Parents satisfaction" },
   { value: 240, suffix: "+", label: "Students enrolled" },
 ] as const;
+
+export type StudentGender = "female" | "male";
+
+export type ShiningStar = {
+  name: string;
+  roll: string;
+  marks: number;
+  gender: StudentGender;
+};
+
+export const shiningStars = {
+  part1: {
+    id: "hssc-i" as const,
+    label: "HSSC Part-I",
+    subtitle: "1st year — highest scorers",
+    students: [
+      { name: "Farishta Bibi", roll: "706422", marks: 557, gender: "female" },
+      { name: "Ayesha Rahmat", roll: "706445", marks: 547, gender: "female" },
+      { name: "Manahil Iftikhar", roll: "706422", marks: 542, gender: "female" },
+      { name: "Aleesha Iftikhar", roll: "706437", marks: 541, gender: "female" },
+      { name: "Malika Zardin", roll: "706428", marks: 539, gender: "female" },
+      { name: "Sana Gul", roll: "706435", marks: 539, gender: "female" },
+      { name: "Hasanat", roll: "706441", marks: 537, gender: "female" },
+      { name: "Kashmal Hussain", roll: "706430", marks: 523, gender: "male" },
+      { name: "M. Awais", roll: "718908", marks: 510, gender: "male" },
+      { name: "Farhan Kamal", roll: "727211", marks: 510, gender: "male" },
+    ] satisfies ShiningStar[],
+  },
+  part2: {
+    id: "hssc-ii" as const,
+    label: "HSSC Part-II",
+    subtitle: "2nd year — obtained marks",
+    students: [
+      { name: "Farishta Bibi", roll: "519193", marks: 1033, gender: "female" },
+      { name: "Manahil Iftikhar", roll: "519396", marks: 1015, gender: "female" },
+      { name: "Ayesha Rahmat", roll: "519003", marks: 1014, gender: "female" },
+      { name: "Sana Gul", roll: "519180", marks: 1012, gender: "female" },
+    ] satisfies ShiningStar[],
+  },
+};
 
 export const values = [
   {

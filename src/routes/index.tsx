@@ -3,6 +3,7 @@ import { ArrowUpRight, HeartHandshake, Palette, ShieldCheck, Sparkles, Target } 
 import { Shell } from "@/components/layout/shell";
 import { HomeHero } from "@/components/sections/home-hero";
 import { StatsRow } from "@/components/sections/stats";
+import { ShiningStars } from "@/components/sections/shining-stars";
 import { Testimonials } from "@/components/sections/testimonials";
 import { ButtonLink } from "@/components/ui/button";
 import { ProgramCard } from "@/components/ui/program-card";
@@ -59,6 +60,8 @@ function Home() {
         <section className="container-site pb-8">
           <StatsRow />
         </section>
+
+        <ShiningStars />
 
 
         <section className="bg-cream py-16 md:py-24">
