@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "FSA College System — Learn what actually matters.",
+      "hasCanvas": false,
+      "bodyTextLen": 4649,
+      "bodyTextHash": "e75e45405152549fd0556c472876ff3516a22506c230db633c6be3ed9a2cb300",
+      "bodyTextPrefix": "Follow us on campus visits this spring (888) 456 7890 admissions",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-prod.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "FSA College System — Learn what actually matters.",
+      "hasCanvas": false,
+      "bodyTextLen": 4512,
+      "bodyTextHash": "69f35c3236d7dc948b907f71c67f79020ca5fb9a67daa05dca3ab1688a157bf1",
+      "bodyTextPrefix": "FSA COLLEGE SYSTEM SHABQADAR Stop memorizing for tests and learn",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-prod-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview-prod.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
