@@ -69,14 +69,25 @@ export function Header() {
               item.to === "/"
                 ? pathname === "/"
                 : pathname === item.to || pathname.startsWith(`${item.to}/`);
+            
+            const commonClasses = cn(
+              "rounded-pill px-3 py-2 text-[0.9375rem] font-medium tracking-[-0.02em] transition-colors",
+              active ? "bg-navy/5 text-navy" : "text-navy/70 hover:text-navy",
+            );
+
+            if (item.to.includes("#")) {
+              return (
+                <a key={item.to} href={item.to} className={commonClasses}>
+                  {item.label}
+                </a>
+              );
+            }
+
             return (
               <Link
                 key={item.to}
-                to={item.to}
-                className={cn(
-                  "rounded-pill px-3 py-2 text-[0.9375rem] font-medium tracking-[-0.02em] transition-colors",
-                  active ? "bg-navy/5 text-navy" : "text-navy/70 hover:text-navy",
-                )}
+                to={item.to as any}
+                className={commonClasses}
               >
                 {item.label}
               </Link>
@@ -103,16 +114,31 @@ export function Header() {
       {open ? (
         <div className="border-t border-line bg-ivory lg:hidden">
           <nav className="container-site flex flex-col gap-1 py-4" aria-label="Mobile">
-            {navLinks.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="rounded-lg px-3 py-3 text-base font-semibold text-navy"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <ButtonLink to="/contact" className="mt-2 w-full">
+            {navLinks.map((item) => {
+              if (item.to.includes("#")) {
+                return (
+                  <a
+                    key={item.to}
+                    href={item.to}
+                    className="rounded-lg px-3 py-3 text-base font-semibold text-navy"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to as any}
+                  className="rounded-lg px-3 py-3 text-base font-semibold text-navy"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <ButtonLink to="/contact" className="mt-2 w-full" onClick={() => setOpen(false)}>
               Contact us
             </ButtonLink>
             <a href={site.phoneHref} className="mt-3 px-3 text-sm text-muted">

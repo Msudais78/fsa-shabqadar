@@ -12,12 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AdmissionRouteImport } from './routes/admission'
-import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CampusLifeRouteImport } from './routes/campus-life'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FeesRouteImport } from './routes/fees'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as ShiningStarsRouteImport } from './routes/shining-stars'
 import { Route as TeamRouteImport } from './routes/team'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
 import { Route as TeamSlugRouteImport } from './routes/team.$slug'
 
@@ -36,9 +36,9 @@ const AdmissionRoute = AdmissionRouteImport.update({
   path: '/admission',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
+const CampusLifeRoute = CampusLifeRouteImport.update({
+  id: '/campus-life',
+  path: '/campus-life',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -56,15 +56,15 @@ const ProgramsRoute = ProgramsRouteImport.update({
   path: '/programs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShiningStarsRoute = ShiningStarsRouteImport.update({
+  id: '/shining-stars',
+  path: '/shining-stars',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
   getParentRoute: () => rootRouteImport,
-} as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
 } as any)
 const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
   id: '/$slug',
@@ -81,12 +81,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admission': typeof AdmissionRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/campus-life': typeof CampusLifeRoute
   '/contact': typeof ContactRoute
   '/fees': typeof FeesRoute
   '/programs': typeof ProgramsRouteWithChildren
+  '/shining-stars': typeof ShiningStarsRoute
   '/team': typeof TeamRouteWithChildren
-  '/blog/$slug': typeof BlogSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
   '/team/$slug': typeof TeamSlugRoute
 }
@@ -94,12 +94,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admission': typeof AdmissionRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/campus-life': typeof CampusLifeRoute
   '/contact': typeof ContactRoute
   '/fees': typeof FeesRoute
   '/programs': typeof ProgramsRouteWithChildren
+  '/shining-stars': typeof ShiningStarsRoute
   '/team': typeof TeamRouteWithChildren
-  '/blog/$slug': typeof BlogSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
   '/team/$slug': typeof TeamSlugRoute
 }
@@ -108,12 +108,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admission': typeof AdmissionRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/campus-life': typeof CampusLifeRoute
   '/contact': typeof ContactRoute
   '/fees': typeof FeesRoute
   '/programs': typeof ProgramsRouteWithChildren
+  '/shining-stars': typeof ShiningStarsRoute
   '/team': typeof TeamRouteWithChildren
-  '/blog/$slug': typeof BlogSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
   '/team/$slug': typeof TeamSlugRoute
 }
@@ -123,12 +123,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admission'
-    | '/blog'
+    | '/campus-life'
     | '/contact'
     | '/fees'
     | '/programs'
+    | '/shining-stars'
     | '/team'
-    | '/blog/$slug'
     | '/programs/$slug'
     | '/team/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -136,12 +136,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admission'
-    | '/blog'
+    | '/campus-life'
     | '/contact'
     | '/fees'
     | '/programs'
+    | '/shining-stars'
     | '/team'
-    | '/blog/$slug'
     | '/programs/$slug'
     | '/team/$slug'
   id:
@@ -149,12 +149,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admission'
-    | '/blog'
+    | '/campus-life'
     | '/contact'
     | '/fees'
     | '/programs'
+    | '/shining-stars'
     | '/team'
-    | '/blog/$slug'
     | '/programs/$slug'
     | '/team/$slug'
   fileRoutesById: FileRoutesById
@@ -163,10 +163,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdmissionRoute: typeof AdmissionRoute
-  BlogRoute: typeof BlogRouteWithChildren
+  CampusLifeRoute: typeof CampusLifeRoute
   ContactRoute: typeof ContactRoute
   FeesRoute: typeof FeesRoute
   ProgramsRoute: typeof ProgramsRouteWithChildren
+  ShiningStarsRoute: typeof ShiningStarsRoute
   TeamRoute: typeof TeamRouteWithChildren
 }
 
@@ -193,11 +194,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdmissionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
+    '/campus-life': {
+      id: '/campus-life'
+      path: '/campus-life'
+      fullPath: '/campus-life'
+      preLoaderRoute: typeof CampusLifeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -221,19 +222,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shining-stars': {
+      id: '/shining-stars'
+      path: '/shining-stars'
+      fullPath: '/shining-stars'
+      preLoaderRoute: typeof ShiningStarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team': {
       id: '/team'
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
     }
     '/programs/$slug': {
       id: '/programs/$slug'
@@ -251,16 +252,6 @@ declare module '@tanstack/react-router' {
     }
   }
 }
-
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ProgramsRouteChildren {
   ProgramsSlugRoute: typeof ProgramsSlugRoute
@@ -288,10 +279,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdmissionRoute: AdmissionRoute,
-  BlogRoute: BlogRouteWithChildren,
+  CampusLifeRoute: CampusLifeRoute,
   ContactRoute: ContactRoute,
   FeesRoute: FeesRoute,
   ProgramsRoute: ProgramsRouteWithChildren,
+  ShiningStarsRoute: ShiningStarsRoute,
   TeamRoute: TeamRouteWithChildren,
 }
 export const routeTree = rootRouteImport

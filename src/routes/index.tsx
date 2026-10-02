@@ -4,9 +4,10 @@ import { Shell } from "@/components/layout/shell";
 import { HomeHero } from "@/components/sections/home-hero";
 import { StatsRow } from "@/components/sections/stats";
 import { Testimonials } from "@/components/sections/testimonials";
+import { ShiningStars } from "@/components/sections/shining-stars";
 import { ButtonLink } from "@/components/ui/button";
 import { ProgramCard } from "@/components/ui/program-card";
-import { gallery, programs, schedule } from "@/lib/site";
+import { campusLife, programs, schedule } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
@@ -59,6 +60,8 @@ function Home() {
         <section className="container-site pb-8">
           <StatsRow />
         </section>
+
+        <ShiningStars />
 
 
         <section className="bg-cream py-16 md:py-24">
@@ -156,21 +159,52 @@ function Home() {
           </div>
         </section>
 
-        <section className="container-site py-16">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-coral">
-                Student life
-              </p>
-              <h2 className="mt-3 text-3xl md:text-4xl">Where ambition meets opportunity</h2>
+        <section className="bg-cream py-16 md:py-20 overflow-hidden">
+          <div className="container-site mb-10 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-coral">
+              Campus Life
+            </p>
+            <p className="mt-3 text-muted max-w-2xl mx-auto text-lg">
+              Tours, seminars, and days on campus — FSA College Shabqadar.
+            </p>
+          </div>
+          
+          <div className="relative flex w-full">
+            {/* Edge fades */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-cream to-transparent md:w-24"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-cream to-transparent md:w-24"></div>
+
+            <div className="marquee-track flex w-max gap-5 px-4 md:px-6">
+              {[...campusLife, ...campusLife].map((item, idx) => (
+                <Link
+                  key={`${item.image}-${idx}`}
+                  to="/campus-life"
+                  className="group flex flex-col w-[260px] md:w-[280px] shrink-0 rounded-3xl bg-white shadow-[0_1px_2px_rgb(18_38_90/0.05),0_8px_16px_rgb(18_38_90/0.03)] border border-[rgb(0,0,0,0.02)] overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgb(18_38_90/0.05),0_12px_24px_rgb(18_38_90/0.08)]"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-navy/5">
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm text-navy/85 font-medium leading-relaxed line-clamp-2">
+                      {item.caption}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-            {gallery.map((g) => (
-              <figure key={g.src} className="overflow-hidden rounded-[1.25rem]">
-                <img src={g.src} alt={g.alt} className="aspect-[4/3] w-full object-cover" />
-              </figure>
-            ))}
+
+          <div className="container-site mt-10 text-center">
+            <Link
+              to="/campus-life"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-coral hover:text-navy transition-colors"
+            >
+              See more campus life <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </section>
 
