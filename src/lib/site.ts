@@ -3,8 +3,8 @@ export const site = {
   tagline: "Learn what actually matters.",
   description:
     "FSA College System Shabqadar is an intermediate and IT college focused on practical skills, rigorous academics, and real-world preparation for 11th and 12th graders.",
-  phone: "0333-5011415",
-  phoneHref: "tel:+923335011415",
+  phone: "03335011415",
+  phoneHref: "tel:03335011415",
   email: "Fsacollegesystemshabqadar@gmail.com",
   emailHref: "mailto:Fsacollegesystemshabqadar@gmail.com",
   address: "Shabqadar, Khyber Pakhtunkhwa, Pakistan",
@@ -18,7 +18,8 @@ export const navLinks = [
   { to: "/admission", label: "Admission" },
   { to: "/team", label: "Team" },
   { to: "/fees", label: "Fees" },
-  { to: "/blog", label: "Blog" },
+  { to: "/campus-life", label: "Campus Life" },
+  { to: "/shining-stars", label: "Shining Stars" },
 ] as const;
 
 export const stats = [
@@ -27,46 +28,6 @@ export const stats = [
   { value: 100, suffix: "%", label: "Parents satisfaction" },
   { value: 240, suffix: "+", label: "Students enrolled" },
 ] as const;
-
-export type StudentGender = "female" | "male";
-
-export type ShiningStar = {
-  name: string;
-  roll: string;
-  marks: number;
-  gender: StudentGender;
-};
-
-export const shiningStars = {
-  part1: {
-    id: "hssc-i" as const,
-    label: "HSSC Part-I",
-    subtitle: "1st year — highest scorers",
-    students: [
-      { name: "Farishta Bibi", roll: "706422", marks: 557, gender: "female" },
-      { name: "Ayesha Rahmat", roll: "706445", marks: 547, gender: "female" },
-      { name: "Manahil Iftikhar", roll: "706422", marks: 542, gender: "female" },
-      { name: "Aleesha Iftikhar", roll: "706437", marks: 541, gender: "female" },
-      { name: "Malika Zardin", roll: "706428", marks: 539, gender: "female" },
-      { name: "Sana Gul", roll: "706435", marks: 539, gender: "female" },
-      { name: "Hasanat", roll: "706441", marks: 537, gender: "female" },
-      { name: "Kashmal Hussain", roll: "706430", marks: 523, gender: "male" },
-      { name: "M. Awais", roll: "718908", marks: 510, gender: "male" },
-      { name: "Farhan Kamal", roll: "727211", marks: 510, gender: "male" },
-    ] satisfies ShiningStar[],
-  },
-  part2: {
-    id: "hssc-ii" as const,
-    label: "HSSC Part-II",
-    subtitle: "2nd year — obtained marks",
-    students: [
-      { name: "Farishta Bibi", roll: "519193", marks: 1033, gender: "female" },
-      { name: "Manahil Iftikhar", roll: "519396", marks: 1015, gender: "female" },
-      { name: "Ayesha Rahmat", roll: "519003", marks: 1014, gender: "female" },
-      { name: "Sana Gul", roll: "519180", marks: 1012, gender: "female" },
-    ] satisfies ShiningStar[],
-  },
-};
 
 export const values = [
   {
@@ -322,131 +283,30 @@ export const feePlans = [
   },
 ];
 
-export const posts = [
+export const campusLife = [
   {
-    slug: "preparing-little-learners",
-    title: "Preparing little learners for a bright school journey",
-    date: "January 19, 2026",
-    author: "Alex Wright",
-    role: "Co-Teacher",
-    image: "/images/backpacks.jpg",
-    excerpt:
-      "Early preparation helps children begin school with confidence, curiosity, and excitement — without rushing childhood.",
-    content: [
-      "Early preparation helps children begin their school journey with confidence, curiosity, and excitement. By developing foundational skills and positive habits, children feel ready to explore, learn, and belong.",
-      "A supportive start encourages independence, emotional resilience, and a love for learning, setting the stage for long-term academic and personal success.",
-      "A nurturing environment allows children to feel safe while discovering new routines. Through structured activities, play, and gentle guidance, they practice communication, sharing, and self-help skills that make the first day of school feel familiar rather than frightening.",
-      "These early experiences help children transition smoothly into school life with confidence and enthusiasm. Preparing little learners early is not about extra worksheets — it is about a joyful, confident, and successful beginning.",
-    ],
-    skills: [
-      { title: "Creativity and imagination", body: "Children explore ideas freely with open-ended materials." },
-      { title: "Problem-solving", body: "Learning through exploration, trial, and play." },
-      { title: "Emotional confidence", body: "A positive, unhurried environment lowers stress." },
-      { title: "Conflict resolution", body: "Solving problems calmly with adult coaching." },
-    ],
+    image: "/gallery/campus-1.jpg",
+    alt: "FSA College Shabqadar campus",
+    caption: "Campus aur field visits — class se bahar bhi.",
   },
   {
-    slug: "building-strong-values",
-    title: "Building strong values in early childhood education",
-    date: "January 19, 2026",
-    author: "Estelle Sipes",
-    role: "Curriculum Planner",
-    image: "/images/reading.jpg",
-    excerpt:
-      "Kindness, courage, and care are practiced daily — in the block corner, at snack, and on the garden path.",
-    content: [
-      "Values are not a poster on the wall. At FSA they are practiced in the small moments: waiting for a turn, repairing a friendship, noticing a classmate who needs help.",
-      "Young children build a moral vocabulary when adults name feelings, model repair, and stay nearby during hard moments. We do not expect perfection. We expect practice.",
-      "Our studios use picture books, class meetings, and outdoor caretaking — watering plants, greeting the gardener — to make kindness visible and physical.",
-    ],
-    skills: [
-      { title: "Kindness in action", body: "Daily rituals that make care concrete." },
-      { title: "Repair, not shame", body: "Conflicts become chances to try again." },
-    ],
+    image: "/gallery/485003255_1821626695340631_937012269984703536_n.jpg",
+    alt: "Educational tour — FSA College bus",
+    caption: "Educational tour — college bus, students, and the road out of Shabqadar.",
   },
   {
-    slug: "nurturing-through-play",
-    title: "Nurturing young minds through playful learning",
-    date: "January 19, 2026",
-    author: "Meghan Olson",
-    role: "Learning Center Instructor",
-    image: "/images/blocks.jpg",
-    excerpt:
-      "Play is not a break from learning. For young children, play is the most serious work they do.",
-    content: [
-      "Watch a four-year-old in the block corner and you will see engineering, negotiation, storytelling, and stamina. That is the curriculum.",
-      "Teachers at FSA prepare the environment, then protect long stretches of uninterrupted play. We document what we notice and use it to plan the next invitation.",
-      "Families sometimes worry that play is “just play.” We invite them to sit on the rug and see the literacy, math, and science hiding in plain sight.",
-    ],
-    skills: [
-      { title: "Deep play", body: "Long, protected stretches of child-led work." },
-      { title: "Teacher as researcher", body: "Observation guides the next invitation." },
-    ],
+    image: "/gallery/campus-2.jpg",
+    alt: "FSA College students on campus",
+    caption: "Assembly and campus days. Boys’ campus, one college.",
   },
   {
-    slug: "why-social-skills-matter",
-    title: "Why social skills matter in early childhood development",
-    date: "January 19, 2026",
-    author: "Emerson Stanton",
-    role: "Early Childhood Educator",
-    image: "/images/music.jpg",
-    excerpt:
-      "Friendship, turn-taking, and reading a room are academic skills in disguise — and they start in preschool.",
-    content: [
-      "A child who can enter play, share materials, and recover from disappointment is a child ready for any classroom. Social fluency is not extra. It is foundational.",
-      "We coach these skills in the moment: “You look like you want a turn. Would you like the words?” Adults stay close, then step back as children grow capable.",
-      "Group music, outdoor games, and mixed-age moments give children a wide social practice field, with teachers who know when to intervene and when to wait.",
-    ],
-    skills: [
-      { title: "Coaching in the moment", body: "Language offered at the point of need." },
-      { title: "Mixed-age practice", body: "Younger and older children learn from each other." },
-    ],
+    image: "/gallery/485838391_1823860921783875_6328649899520956165_n.jpg",
+    alt: "E-commerce and digital marketing seminar at FSA College Shabqadar",
+    caption: "One-day seminar: e-commerce and digital marketing. Certificates in hand.",
   },
   {
-    slug: "creative-art-projects",
-    title: "Creative art projects to boost your child’s imagination",
-    date: "January 19, 2026",
-    author: "Jonathan Deckow",
-    role: "Activity Coordinator",
-    image: "/images/art.jpg",
-    excerpt:
-      "Skip the identical crafts. Open-ended materials let children invent, revise, and surprise themselves.",
-    content: [
-      "At FSA the art studio is a laboratory, not a factory. We offer clay, watercolor, cardboard, and fabric, then get out of the way.",
-      "Process-based art builds fine motor control, planning, and the courage to try again when a piece does not go as imagined. Those are academic muscles.",
-      "Try this at home: a tray, three materials, and twenty minutes of uninterrupted time. Resist the urge to make it look like something.",
-    ],
-    skills: [
-      { title: "Process over product", body: "The making is the point." },
-      { title: "Materials as language", body: "Children say things with paint they cannot yet say in words." },
-    ],
+    image: "/gallery/campus-3.jpg",
+    alt: "Students receiving certificates — FSA College seminar",
+    caption: "Same seminar — students recognised for taking part.",
   },
-  {
-    slug: "teaching-responsibility",
-    title: "Teaching responsibility to young children through daily tasks",
-    date: "January 19, 2026",
-    author: "Kellie Walker",
-    role: "Toddler Group Teacher",
-    image: "/images/outdoor.jpg",
-    excerpt:
-      "Jobs like watering, sweeping, and setting snack are not chores to children. They are a chance to belong.",
-    content: [
-      "Young children want to contribute. When we give them real work — not toy work — they stand taller.",
-      "Each studio has a job board: line leader, plant helper, snack setter, door holder. Jobs rotate so every child practices competence.",
-      "At home, the same idea applies. A low hook for a coat, a cup they can pour, a cloth for spills. Responsibility is a feeling of “I can,” built in tiny repetitions.",
-    ],
-    skills: [
-      { title: "Real work", body: "Jobs that actually matter to the classroom." },
-      { title: "Independence", body: "The environment is scaled to small hands." },
-    ],
-  },
-];
-
-export const gallery = [
-  { src: "/gallery/485003255_1821626695340631_937012269984703536_n.jpg", alt: "Student life", caption: "Campus activities" },
-  { src: "/gallery/485838391_1823860921783875_6328649899520956165_n.jpg", alt: "Student life", caption: "Learning environment" },
-  { src: "/gallery/486380123_1121800189959236_5640190311464730090_n.jpg", alt: "Student life", caption: "College experience" },
-  { src: "/gallery/campus-1.jpg", alt: "Student life", caption: "Student interaction" },
-  { src: "/gallery/campus-2.jpg", alt: "Student life", caption: "Campus events" },
-  { src: "/gallery/campus-3.jpg", alt: "Student life", caption: "Extracurriculars" },
 ];
