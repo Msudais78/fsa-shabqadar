@@ -8,7 +8,6 @@ const quick = [
   { to: "/about", label: "About" },
   { to: "/programs", label: "Programs" },
   { to: "/fees", label: "Fees" },
-  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 

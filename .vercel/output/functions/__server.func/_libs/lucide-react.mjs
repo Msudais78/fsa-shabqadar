@@ -105,6 +105,21 @@ var Check = createLucideIcon("check", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var CircleCheck = createLucideIcon("circle-check", [["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}], ["path", {
+	d: "m9 12 2 2 4-4",
+	key: "dzmm74"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var HeartHandshake = createLucideIcon("heart-handshake", [
 	["path", {
 		d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
@@ -175,6 +190,16 @@ var Menu = createLucideIcon("menu", [
 		key: "1o0s65"
 	}]
 ]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var MessageCircle = createLucideIcon("message-circle", [["path", {
+	d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z",
+	key: "vv11sd"
+}]]);
 /**
 * @license lucide-react v0.510.0 - ISC
 *
@@ -258,4 +283,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Phone as a, Mail as c, ArrowUpRight as d, Plus as i, HeartHandshake as l, TriangleAlert as n, Menu as o, Target as r, MapPin as s, X as t, Check as u };
+export { Phone as a, MapPin as c, CircleCheck as d, Check as f, Plus as i, Mail as l, TriangleAlert as n, MessageCircle as o, ArrowUpRight as p, Target as r, Menu as s, X as t, HeartHandshake as u };
